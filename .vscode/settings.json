@@ -39,5 +39,8 @@
     "javascriptreact": "html",
     "typescript": "javascript",
     "typescriptreact": "javascript"
-  }
+  },
+  "cSpell.words": [
+    "jotai"
+  ]
 }

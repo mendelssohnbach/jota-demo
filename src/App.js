@@ -1,28 +1,20 @@
-import { useState } from 'react';
+import { atom, useAtom } from 'jotai';
 
 import './styles.css';
 
-export default function App() {
+export const counterAtom = atom(0); // Global state
+
+export default function CounterButton() {
+  const [count, setCount] = useAtom(counterAtom);
+
+  const handleClick = () => {
+    setCount((number) => number + 1); // Increment number
+  };
+
   return (
     <div>
-      <Header />
-      <Main />
+      {count}
+      <button onClick={handleClick}>Increment</button>
     </div>
   );
-}
-
-function Header() {
-  const [search, setSearch] = useState('');
-  const handleChange = (event) => setSearch(event.target.value);
-
-  return (
-    <header>
-      <input type="text" value={search} onChange={handleChange} />
-    </header>
-  );
-}
-
-function Main() {
-  // How to access the search?
-  return <main>Search query: ???</main>;
 }
