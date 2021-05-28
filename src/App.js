@@ -1,4 +1,5 @@
 import { atom, useAtom } from 'jotai';
+import Hoge from './Components/Hoge';
 
 import './styles.css';
 
@@ -15,6 +16,7 @@ export default function HeroName() {
     <div>
       <input type="text" value={name} onChange={handleChange} />
       <div>Is name empty: {isNameEmpty ? 'Yes' : 'No'}</div>
+      <Hoge />
     </div>
   );
 }
